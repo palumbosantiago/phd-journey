@@ -14,3 +14,11 @@
 *.nav
 *.snm
 *.vrb
+build/
+*.pdf
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
