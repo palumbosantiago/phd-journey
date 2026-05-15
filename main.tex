@@ -1,28 +1,95 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,oneside]{book}
 
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{physics}
-\usepackage{graphicx}
-\usepackage{hyperref}
+%----------------------------------------
+% Load packages
+%----------------------------------------
+\input{packages}
 
-\title{My Physics Notes}
-\author{Santiago}
+%----------------------------------------
+% Thesis information
+%----------------------------------------
+\title{Notes on Algebras, information and topology}
+\author{Santiago Palumbo}
+
 \date{\today}
 
+%----------------------------------------
+% Begin document
+%----------------------------------------
 \begin{document}
 
-\maketitle
+%----------------------------------------
+% Title page
+%----------------------------------------
+\begin{titlepage}
+    \centering
+    
+    \vspace*{2cm}
+    
+    {\Huge\bfseries Notes on Algebras, information and topology\par}
+    
+    \vspace{1.5cm}
+    
+    {\Large Santiago Palumbo\par}
+    
+    %%\vspace{1cm}
+    
+    %%{\large
+    %%A thesis submitted in partial fulfillment\\
+    %%of the requirements for the degree of\\
+    %%Master of Science
+    %%\par}
+    
+    %%\vfill
+    
+    %%{\large
+    %%Department of Physics\\
+    %%University Name
+    %%\par}
+    
+    \vspace{1cm}
+    
+    {\large \today\par}
+    
+\end{titlepage}
 
-\section{Introduction}
-|j
-Hello world.
+%----------------------------------------
+% Front matter
+%----------------------------------------
+\pagenumbering{roman}
+
+%\include{chapters/abstract}
+%\include{chapters/acknowledgements}
+
+
+\tableofcontents
+%\clearpage
+
+
+%\listoffigures
+%\clearpage
+
+%\listoftables
+
+%\clearpage
+
+%----------------------------------------
+% Main matter
+%----------------------------------------
+\pagenumbering{arabic}
 
 
 
-\[
-E = mc^2
-\]
+\include{chapters/chapter0}
 
 
+%----------------------------------------
+% Bibliography
+%----------------------------------------
+\bibliographystyle{unsrtnat}
+\bibliography{bibliography/references}
+
+%----------------------------------------
+% End document
+%----------------------------------------
 \end{document}

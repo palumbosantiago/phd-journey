@@ -1,0 +1,154 @@
+%========================
+% packages.tex
+%========================
+% Centralized package loading for the thesis.
+% Load this file in main.tex using:
+%
+% \input{packages}
+%
+% This template is designed to compile cleanly with pdflatex.
+% Compatible with TeX Live and Overleaf.
+
+%----------------------------------------
+% Encoding and fonts
+%----------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+%----------------------------------------
+% Language
+%----------------------------------------
+\usepackage[english]{babel}
+
+%----------------------------------------
+% Page layout
+%----------------------------------------
+\usepackage[a4paper,
+            margin=2.5cm,
+            headheight=15pt]{geometry}
+
+%----------------------------------------
+% Mathematics
+%----------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+
+%----------------------------------------
+% Physics notation
+%----------------------------------------
+\usepackage{physics}
+\usepackage{slashed}
+
+%----------------------------------------
+% Graphics and figures
+%----------------------------------------
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\usepackage{float}
+
+%----------------------------------------
+% Tables
+%----------------------------------------
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+%----------------------------------------
+% Bibliography and citations
+%----------------------------------------
+\usepackage[numbers,sort&compress]{natbib}
+
+%----------------------------------------
+% Hyperlinks
+%----------------------------------------
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+]{hyperref}
+
+%----------------------------------------
+% Better references
+%----------------------------------------
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+%----------------------------------------
+% Lists
+%----------------------------------------
+\usepackage{enumitem}
+
+%----------------------------------------
+% Header and footer
+%----------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+
+%----------------------------------------
+% Line spacing
+%----------------------------------------
+\usepackage{setspace}
+\onehalfspacing
+
+%----------------------------------------
+% Appendix support
+%----------------------------------------
+\usepackage[toc,page]{appendix}
+
+%----------------------------------------
+% TOC formatting
+%----------------------------------------
+\usepackage{tocloft}
+
+%----------------------------------------
+% Code listings
+%----------------------------------------
+\usepackage{listings}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    columns=fullflexible
+}
+
+%----------------------------------------
+% TikZ diagrams
+%----------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+%----------------------------------------
+% Custom theorem environments
+%----------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%----------------------------------------
+% Common custom commands
+%----------------------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+%----------------------------------------
+% Prevent overfull lines
+%----------------------------------------
+\sloppy
