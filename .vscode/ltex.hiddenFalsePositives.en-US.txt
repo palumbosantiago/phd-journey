@@ -1,0 +1,9 @@
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q[display] .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q[ .\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q]\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qbasicstyle=, breaklines=true, frame=single .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Qbasicstyle=, breaklines=true, frame=single .\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QJorge Luis Borges, La Biblioteca de Babel\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QSantiago Palumbo Instituto Balseiro Supervisor: Name Here\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QEl Universo (que otros llaman la Biblioteca) se compone de un número indefinido, y tal vez infinito, de galerías hexagonales...\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QExample Table.\\E$"}

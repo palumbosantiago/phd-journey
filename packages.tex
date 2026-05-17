@@ -1,13 +1,8 @@
 %========================
 % packages.tex
 %========================
-% Centralized package loading for the thesis.
-% Load this file in main.tex using:
-%
-% \input{packages}
-%
-% This template is designed to compile cleanly with pdflatex.
-% Compatible with TeX Live and Overleaf.
+% ONLY package loading
+% No formatting here
 
 %----------------------------------------
 % Encoding and fonts
@@ -22,11 +17,12 @@
 \usepackage[english]{babel}
 
 %----------------------------------------
-% Page layout
+% Page geometry
 %----------------------------------------
-\usepackage[a4paper,
-            margin=2.5cm,
-            headheight=15pt]{geometry}
+\usepackage[
+    a4paper,
+    margin=2cm
+]{geometry}
 
 %----------------------------------------
 % Mathematics
@@ -38,13 +34,13 @@
 \usepackage{bm}
 
 %----------------------------------------
-% Physics notation
+% Physics
 %----------------------------------------
 \usepackage{physics}
 \usepackage{slashed}
 
 %----------------------------------------
-% Graphics and figures
+% Graphics
 %----------------------------------------
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -59,7 +55,16 @@
 \usepackage{array}
 
 %----------------------------------------
-% Bibliography and citations
+% Captions
+%----------------------------------------
+\usepackage[
+    font=small,
+    justification=justified,
+    singlelinecheck=false
+]{caption}
+
+%----------------------------------------
+% Bibliography
 %----------------------------------------
 \usepackage[numbers,sort&compress]{natbib}
 
@@ -84,23 +89,22 @@
 \usepackage{enumitem}
 
 %----------------------------------------
-% Header and footer
+% Headers
 %----------------------------------------
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-
-\fancyhf{}
-\fancyhead[L]{\leftmark}
-\fancyhead[R]{\thepage}
 
 %----------------------------------------
-% Line spacing
+% Spacing
 %----------------------------------------
 \usepackage{setspace}
-\onehalfspacing
 
 %----------------------------------------
-% Appendix support
+% Chapter formatting
+%----------------------------------------
+\usepackage{titlesec}
+
+%----------------------------------------
+% Appendix
 %----------------------------------------
 \usepackage[toc,page]{appendix}
 
@@ -114,41 +118,8 @@
 %----------------------------------------
 \usepackage{listings}
 
-\lstset{
-    basicstyle=\ttfamily\small,
-    breaklines=true,
-    frame=single,
-    columns=fullflexible
-}
-
 %----------------------------------------
-% TikZ diagrams
+% TikZ
 %----------------------------------------
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc}
-
-%----------------------------------------
-% Custom theorem environments
-%----------------------------------------
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-
-\theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
-
-%----------------------------------------
-% Common custom commands
-%----------------------------------------
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Z}{\mathbb{Z}}
-
-%----------------------------------------
-% Prevent overfull lines
-%----------------------------------------
-\sloppy
