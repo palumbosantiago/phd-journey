@@ -4,3 +4,7 @@ anyonic
 Superselection
 Wightman
 superselection
+hermitian
+equallytie
+antiunitaries
+fermionic

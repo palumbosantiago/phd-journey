@@ -15,7 +15,7 @@ Suppose that you have a quantum mechanical system with Hilbert space
 $\mathcal{H}=\bigoplus_i \mathcal{H}_i$, such that any state 
 $\ket{\psi}$ decomposes uniquely,
 \begin{equation*}
-    \ket{\psi}=\sum_{i}\ket{\psi,i}, \; \ket{\psi,i} \in \mathcal{H}_i.
+    \ket{\psi}=\sum_{i=1}^{n}\ket{\psi,i}, \; \ket{\psi,i} \in \mathcal{H}_i.
 \end{equation*}
 Now, the claim is that:
 \begin{center}
@@ -23,23 +23,103 @@ Now, the claim is that:
 \parbox{0.75\textwidth}{
 \centering
 $\mathcal{H}_i$ are superselection sectors if there is no
-\textbf{physical} measurement one can do to tell apart the state
-$\ket{\psi}=\sum_i \ket{\psi,i}$ from
-$\ket{\psi'}=\sum_i \omega_i \ket{\psi,i}$,
+\textbf{physical} measurement one can do to tell the state
+$\ket{\psi}=\sum_{i=1}^{n} \ket{\psi,i}$ appart from
+$\ket{\psi'}=\sum_{i=1}^{n} \omega_i \ket{\psi,i}$,
 where $\omega_i$ are phases.\par
 }
 \end{center}
+
 An equivalent way of rephrasing this is that,
 
 \begin{center}
 \itshape
 \parbox{0.75\textwidth}{
     \centering
-    Any observable $O$ with a non-null matrix element 
-    $\bra{\psi,i} O \ket{psi,j}$ can not be realized physically. 
+    Any observable $O$ with a non-null matrix element
+    $\bra{\psi,i} O \ket{\psi,j}$ cannot be realized
+    physically\footnotemark.
+}
+\end{center}
+
+\footnotetext{
+This is the "super" of superselection, as it is a stronger
+condition than the usual selection rules
+$\bra{\varphi}\hat H\ket{\psi}=0$.
 }
 
-\end{center}
+As the expectation value $\bra{\psi'} O \ket{\psi'}$ would allow 
+us to know something about the phases $\omega_i$. This means we have
+to restrict our selves to observables $\mathcal{O}=\bigoplus_{i=1}^{n} O_i$ that are 
+diagonal by blocks in $\mathcal{H}_i$. This has a remarkable consequence:
+if the only experiments we can do are those that don't mix sectors,
+then any coherent superposition of different sectors is indistinguishable
+from a mixed state, as
+\begin{align*}
+\bra{\psi'}\mathcal{O}\ket{\psi'} &= \sum_{i=1}^{n}\bra{\psi,i}O_i\ket{\psi,i}\\
+                                  &= \mathrm{tr}(\rho \mathcal{O}).
+\end{align*}
+With $\rho = \frac{1}{n}\sum_{i=1}^{n}\ket{\psi,i}\bra{\psi,i}$\footnote{
+    You can check this by extending $\ket{\psi,i}$ to an orthonormal
+in each subspace $\mathcal{H}_i$.}.
+We have only talked about observables i.e. hermitian operators. Is natural to 
+think (or at least should be after the next section) that any operation that
+mixes sectors -like a unitary- should be forbidden physically. This restricts
+the algebra of operators available in a laboratory to be block diagonal 
+$\bigoplus_{i=1}^n \mathcal{B}(\mathcal{H}_i)$\footnote{
+    $\mathcal{B}(\mathcal{H})$ is notation for the operators that act on 
+    $\mathcal{H}$ or the bounded operators if you are thinking 
+    infinite dimension.
+}. 
+
+\subsection{Superselection sectors and symmetry}
+So far all seems too ad-hoc, we arbitrarily decomposed the Hilbert space in
+orthogonal sectors and claimed that you can't tell relative phases between 
+the states in each one. However, this happens naturally if you consider
+that you can't tell the difference between states related by a symmetry 
+operation.
+
+Take for instance time reversal symmetry $\mathcal{T}= U\mathcal{K}$,
+$U$ the unitary part and $\mathcal{K}$ the complex conjugation. The statement
+that time reversed partners are indistinguishable is the equallytie 
+of the two probabilities\footnotemark for any observable $\mathcal{O}$,
+
+\footnotetext{As Winger pointed out, the requirement for symmetries is that they
+keep probabilities invariant rather than amplitudes, allowing antiunitaries.}
+
+\begin{equation*}
+    \abs{\bra{\varphi}\mathcal{O}\ket{\psi}}^2
+    =
+    \abs{\bra{\mathcal{T}\varphi}\mathcal{O}\ket{\mathcal{T}\psi}}^2
+\end{equation*}
+Which is valid if we choose operators that satisfy,
+\begin{equation*}
+    \mathcal{K}(U^\dagger\mathcal{O}U) = \mathcal{O}.
+\end{equation*}
+Now take a fermionic state  $\ket{f}$ and a bosonic one $\ket{b}$,
+for fermions $\mathcal{T}^2=-1$ and for bosons $\mathcal{T}^2=1$. The matrix
+element of $\mathcal{O}$ then reads,
+\begin{align}
+    \begin{split}
+    \bra{f}\mathcal{O}\ket{b}&
+    =\bra{f}\mathcal{K}(U^\dagger\mathcal{O}U)\ket{b},\\
+    &=\overline{\bra{\mathcal{K}f}U^\dagger\mathcal{O}U\ket{\mathcal{K}b}},\\
+    &=\overline{\bra{\mathcal{T}f}\mathcal{O}\ket{\mathcal{T}b}}.
+    \label{time_reversal_1}
+    \end{split}
+\end{align}
+Now one more time,
+
+\begin{equation}
+    \overline{\bra{\mathcal{T}f}\mathcal{O}\ket{\mathcal{T}b}}
+    =
+    \overline{\overline{\bra{\mathcal{T}^2f}\mathcal{O}\ket{\mathcal{T}^2b}}}
+    =-\bra{f}\mathcal{O}\ket{b}.
+    \label{time_reversal_2}
+\end{equation}
+And from \ref{time_reversal_1} and \ref{time_reversal_2} we see that 
+ $\bra{f}\mathcal{O}\ket{b}=0$, so any operation that respects time reversal 
+ symmetry gets neatly separated in a bosonic and fermionic sector!
 \section{The algebraic point of view}
 
 \section{Why don't we learn about SS in QM?}
