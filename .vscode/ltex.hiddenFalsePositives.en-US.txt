@@ -8,3 +8,6 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QEl Universo (que otros llaman la Biblioteca) se compone de un número indefinido, y tal vez infinito, de galerías hexagonales...\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QExample Table.\\E$"}
 {"rule":"EN_SPLIT_WORDS_HYPHEN","sentence":"^\\QIs natural to think (or at least should be after the next section) that any operation that mixes sectors -like a unitary- should be forbidden physically Superselection sectors and symmetry.\\E$"}
+{"rule":"EN_MULTITOKEN_SPELLING_TWO","sentence":"^\\QThanks to Leandro Martinek for the fruitful discussions that leaded to these notes.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAspectos de la entropía de entrelazamiento en teoría algebraica de campos\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QTesis doctoral\\E$"}

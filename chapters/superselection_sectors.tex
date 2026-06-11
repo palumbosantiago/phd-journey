@@ -7,7 +7,11 @@ is scalar, provided corresponding modifications in the
 properties of the other fields are made. }{Wick, Wightman, Wigner, 1952}
 
 The following discussion is mostly based in Wick, 
-Wightman and Wigner's original work \cite{Wick1952sectors}
+Wightman and Wigner's original work \cite{Wick1952sectors} where they 
+introduced superselection sectors, the idea being that rather than 
+states being defined as rays in the Hilbert space they are equivalent
+up to relative phases between certain partitions of the Hilbert space. 
+The more modern algebraic approach is taken from Diego Pontello's thesis \cite{pontello2019entanglement}. 
 
 \section{A pedestrian point of view}
 The idea of superselection sectors is quite simple. 
@@ -22,9 +26,9 @@ Now, the claim is that:
 \itshape
 \parbox{0.75\textwidth}{
 \centering
-$\mathcal{H}_i$ are superselection sectors if there is no
+$\mathcal{H}_i$ are \textbf{superselection sectors} if there is no
 \textbf{physical} measurement one can do to tell the state
-$\ket{\psi}=\sum_{i=1}^{n} \ket{\psi,i}$ appart from
+$\ket{\psi}=\sum_{i=1}^{n} \ket{\psi,i}$ apart from
 $\ket{\psi'}=\sum_{i=1}^{n} \omega_i \ket{\psi,i}$,
 where $\omega_i$ are phases.\par
 }
@@ -59,12 +63,12 @@ from a mixed state, as
 \bra{\psi'}\mathcal{O}\ket{\psi'} &= \sum_{i=1}^{n}\bra{\psi,i}O_i\ket{\psi,i}\\
                                   &= \mathrm{tr}(\rho \mathcal{O}).
 \end{align*}
-With $\rho = \frac{1}{n}\sum_{i=1}^{n}\ket{\psi,i}\bra{\psi,i}$\footnote{
+With $\rho = \sum_{i=1}^{n}\bra{\psi,i}\ket{\psi,i}\ket{\psi,i}\bra{\psi,i}$\footnote{
     You can check this by extending $\ket{\psi,i}$ to an orthonormal
 in each subspace $\mathcal{H}_i$.}.
 We have only talked about observables i.e. hermitian operators. Is natural to 
 think (or at least should be after the next section) that any operation that
-mixes sectors -like a unitary- should be forbidden physically. This restricts
+mixes sectors - like a unitary - should be forbidden physically. This restricts
 the algebra of operators available in a laboratory to be block diagonal 
 $\bigoplus_{i=1}^n \mathcal{B}(\mathcal{H}_i)$\footnote{
     $\mathcal{B}(\mathcal{H})$ is notation for the operators that act on 
@@ -119,7 +123,48 @@ Now one more time,
 \end{equation}
 And from \ref{time_reversal_1} and \ref{time_reversal_2} we see that 
  $\bra{f}\mathcal{O}\ket{b}=0$, so any operation that respects time reversal 
- symmetry gets neatly separated in a bosonic and fermionic sector!
+ symmetry gets neatly separated into a bosonic and fermionic sector!
+ \subsection{Charge}
 \section{The algebraic point of view}
+In the algebraic point of view one starts from an observable algebra 
+$\mathfrak{A}$, this is an abstract algebra, which means is not necessarily 
+a sub algebra of $\mathcal{B}(\mathcal{H})$. However, one can take a morphism 
+between algebras $\pi: \mathfrak{A} \rightarrow \mathcal{B}(\mathcal{H})$ 
+which defines a \textbf{representation} of the algebra $\mathfrak{A}$ in 
+the Hilbert space $\mathcal{H}$. As it happens with groups,
+this  representation might be reducible\footnotemark. If the $\pi$
+admits a decomposition in irreps\footnotemark, then naturally the operators
+$\pi(a)$ decompose in sectors blocks. Of course one could choose an 
+irreducible representation sticking, to a single sector.
 
+But what happens with states? The whole point of using abstract algebras
+is to write statements independent of representations. For an abstract
+algebra the states form a positive and normalized convex subset of the dual
+space $\mathcal{S}(\mathfrak{A}) \subset \mathfrak{A}^*$. In two words: states
+are functionals that map elements of the algebra to expectation values
+and pure states live in the corners.  
+
+
+\footnotetext{As with groups, $\pi$ is reducible if there exist a proper 
+subspace $\mathcal{S}\subset \mathcal{H}$ such that 
+$\pi(a)(\mathcal{S})\subset\mathcal{S}$ 
+for all elements $a$ of $\mathfrak{A}$.}
+\footnotetext{Sadly, for algebras, is often not the case.}
 \section{Why don't we learn about SS in QM?}
+
+\section{Final reflection}
+In the quantum mechanics point of view one chooses the superselection
+sector based on sensible physical assumption -i.e. you can't superpose a 
+fermion with a boson-, in the algebraic approach it seems that the sectors
+where already given to us by the algebra. Yet, an election of superselection
+sectors has still been made, it's hidden in which algebra we use to model
+physically realizable operations.   
+
+
+\begin{center}
+\textbf{Acknowledgments}
+
+Thanks to Leandro Martinek for the fruitful discussions that leaded
+to these notes. 
+\end{center}
+
